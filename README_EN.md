@@ -4,7 +4,7 @@
 
 ![platform](https://img.shields.io/badge/platform-macos-lightgrey.svg)  [![release](https://img.shields.io/badge/release-v1.7-brightgreen.svg)](https://github.com/TKkk-iOSer/WeChatPlugin-MacOS/releases)  ![support](https://img.shields.io/badge/support-wechat%202.3.10-blue.svg)  [![Readme](https://img.shields.io/badge/readme-中文-yellow.svg)](./README.md)  [![GitHub license](https://img.shields.io/github/license/TKkk-iOSer/WeChatPlugin-MacOS.svg)](https://github.com/TKkk-iOSer/WeChatPlugin-MacOS/blob/master/LICENSE)
 
-# WeChatPlugin-macOS v1.7
+# WeChatPlugin-macOS v2.0.1
 
 **English | [中文](./README.md)**
 
