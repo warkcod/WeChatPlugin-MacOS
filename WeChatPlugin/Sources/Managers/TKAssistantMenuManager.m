@@ -57,6 +57,12 @@ static char tkAboutWindowControllerKey;             //  关于窗口的关联 ke
                                                        target:self
                                                 keyEquivalent:@"k"
                                                         state:[[TKWeChatPluginConfig sharedConfig] autoReplyEnable]];
+    //        登录新微信
+    NSMenuItem *newWeChatItem = [NSMenuItem menuItemWithTitle:TKLocalizedString(@"assistant.menu.newWeChat")
+                                                       action:@selector(onNewWechatInstance:)
+                                                       target:self
+                                                keyEquivalent:@"N"
+                                                        state:0];
     //        远程控制
     NSMenuItem *commandItem = [NSMenuItem menuItemWithTitle:TKLocalizedString(@"assistant.menu.remoteControl")
                                                      action:@selector(onRemoteControl:)
@@ -127,6 +133,7 @@ static char tkAboutWindowControllerKey;             //  关于窗口的关联 ke
     [subMenu addItems:@[preventRevokeItem,
                         autoReplyItem,
                         commandItem,
+                        newWeChatItem,
                         onTopItem,
                         enableSystemBrowserItem,
                         memberExitMonitoringItem,
@@ -229,6 +236,15 @@ static char tkAboutWindowControllerKey;             //  关于窗口的关联 ke
         objc_setAssociatedObject(wechat, &tkAutoReplyWindowControllerKey, autoReplyWC, OBJC_ASSOCIATION_RETAIN);
     }
     [autoReplyWC show];
+}
+
+/**
+ 打开新的微信
+ 
+ @param item 登录新微信的item
+ */
+- (void)onNewWechatInstance:(NSMenuItem *)item {
+    [TKRemoteControlManager executeShellCommand:@"nohup /Applications/WeChat.app/Contents/MacOS/WeChat > /dev/null 2>&1 &"];
 }
 
 /**
