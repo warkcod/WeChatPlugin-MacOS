@@ -52,6 +52,10 @@ static NSString * const kTKWeChatRemotePlistPath = @"https://raw.githubuserconte
 - (instancetype)init {
     self = [super init];
     if (self) {
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:kTKPreventRevokeEnableKey] == nil) {
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kTKPreventRevokeEnableKey];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
         _preventRevokeEnable = [[NSUserDefaults standardUserDefaults] boolForKey:kTKPreventRevokeEnableKey];
         _preventSelfRevokeEnable = [[NSUserDefaults standardUserDefaults] boolForKey:kTKPreventSelfRevokeEnableKey];
         _autoReplyEnable = [[NSUserDefaults standardUserDefaults] boolForKey:kTKAutoReplyEnableKey];
